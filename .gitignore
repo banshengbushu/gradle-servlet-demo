@@ -1,0 +1,14 @@
+.DS_Store
+spec/resources/_*.png
+/pkg
+/tmp
+/doc
+/.yardoc
+/.bundle
+/_site
+test.*
+/vendor
+.idea/
+build
+.gradle
+
