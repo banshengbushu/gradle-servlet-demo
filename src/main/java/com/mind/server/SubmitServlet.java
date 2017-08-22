@@ -13,7 +13,7 @@ import static com.sun.tools.doclets.formats.html.markup.HtmlStyle.title;
 
 public class SubmitServlet extends HttpServlet {
     public String name;
-    public String age;
+    public Integer age;
 
     public SubmitServlet(String value) {
         this.name = name;
@@ -22,14 +22,15 @@ public class SubmitServlet extends HttpServlet {
 
     public void init() throws ServletException {
         name = "Dan";
-        age = "20";
+        age = 20;
+        System.out.println("init");
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
 
         PrintWriter out = response.getWriter();
-        String title = "GET User name and age";
+        String title = "This is your name and age";
 
         String docType = "<!DOCTYPE html> \n";
 

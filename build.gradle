@@ -1,4 +1,4 @@
-group 'gradle-idea-demo1'
+group 'gradle-servlet-demo'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'

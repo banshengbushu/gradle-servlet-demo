@@ -17,10 +17,10 @@ public class JettyServer {
         context.setContextPath("/");
         server.setHandler(context);
 
-        context.addServlet(new ServletHolder(new FirstServlet()), "/hello");
+        context.addServlet(new ServletHolder(new FirstServlet()), "/index");
         context.addServlet(new ServletHolder(new FirstServlet("")), "/hello/web");
         context.addServlet(new ServletHolder(new HelloWorld("")), "/home");
-        context.addServlet(new ServletHolder(new SubmitServlet("")), "/submit");
+        context.addServlet(new ServletHolder(new SubmitServlet("")), "/SubmitServlet");
 
         try {
             server.start();
