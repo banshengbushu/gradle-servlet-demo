@@ -1,0 +1,32 @@
+package com.mind.server;
+
+import org.eclipse.jetty.servlet.ServletContextHandler;
+import org.eclipse.jetty.servlet.ServletHolder;
+import org.eclipse.jetty.server.Server;
+
+
+public class JettyServer {
+
+    public static void main(String[] args) throws Exception {
+
+        System.out.println("Success!  Server start on 8081 port!");
+
+        Server server = new Server(8081);
+
+        ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
+        context.setContextPath("/");
+        server.setHandler(context);
+
+        context.addServlet(new ServletHolder(new FirstServlet()), "/hello");
+        context.addServlet(new ServletHolder(new FirstServlet("")), "/hello/web");
+        context.addServlet(new ServletHolder(new HelloWorld("")), "/home");
+        context.addServlet(new ServletHolder(new SubmitServlet("")), "/submit");
+
+        try {
+            server.start();
+            server.join();
+        } finally {
+            server.destroy();
+        }
+    }
+}
