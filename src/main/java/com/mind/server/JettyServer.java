@@ -19,7 +19,7 @@ public class JettyServer {
 
         context.addServlet(new ServletHolder(new FirstServlet()), "/index");
         context.addServlet(new ServletHolder(new FirstServlet("")), "/hello/web");
-        context.addServlet(new ServletHolder(new HelloWorld("")), "/home");
+        context.addServlet(new ServletHolder(new HelloWorld("111111111","22222222222")), "/home");
         context.addServlet(new ServletHolder(new SubmitServlet("")), "/SubmitServlet");
 
         try {
