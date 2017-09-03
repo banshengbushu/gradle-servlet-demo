@@ -1,13 +1,14 @@
 package com.mybatis.mapper;
-
 import com.mybatis.model.Student;
-import tk.mybatis.mapper.common.Mapper;
 
 import java.util.List;
 
-public interface StudentMapper extends Mapper<Student> {
-    int insert(Student record);
+public interface StudentMapper {
+    public int insertUser(Student record);
 
-    List<Student> selectAll();
+    public List<Student> selectAll();
 
+    public void deleteUser();
+
+    public List<Student> updateUser(Student record);
 }

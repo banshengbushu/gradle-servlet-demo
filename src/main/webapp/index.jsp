@@ -4,6 +4,7 @@
     <title>Title</title>
 </head>
 <body>
+{name}
 
 Hello world!
 

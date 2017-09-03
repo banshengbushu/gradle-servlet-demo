@@ -6,29 +6,23 @@
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="age" jdbcType="INTEGER" property="age" />
   </resultMap>
-  <insert id="insert" parameterType="com.mybatis.model.Student">
+  <insert id="insertUser" parameterType="com.mybatis.model.Student">
     insert into student (id, name, age
-      )
+    )
     values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}
-      )
+    )
   </insert>
   <select id="selectAll" resultMap="BaseResultMap">
     select id, name, age
     from student
   </select>
-  <resultMap id="BaseResultMap" type="com.mybatis.model.Student">
-    <result column="id" jdbcType="INTEGER" property="id" />
-    <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="age" jdbcType="INTEGER" property="age" />
-  </resultMap>
-  <insert id="insert" parameterType="com.mybatis.model.Student">
-    insert into student (id, name, age
-      )
-    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}
-      )
-  </insert>
-  <select id="selectAll" resultMap="BaseResultMap">
-    select id, name, age
-    from student
-  </select>
+
+  <update id="updateUser" parameterType="com.mybatis.model.Student" >
+    update user set userName=#{name},userAge=#{age}} where id=#{id}
+  </update>
+
+  <delete id="deleteUser" parameterType="com.mybatis.model.Student">
+    delete from user where id=#{id}
+  </delete>
+
 </mapper>
